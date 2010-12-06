@@ -30,8 +30,40 @@
         <delay>100</delay>
       </animation>
     </prototype>
+    
+    <prototype id="hborder">
+      <image>data/hborder.png</image>
+    </prototype>
+    
+     <prototype id="vborder">
+      <image>data/vborder.png</image>
+    </prototype>
 	
 	<trigger type="start" lifetime="1">
+	<event type="border" prototype="hborder" name="border">
+        <mode>1 1 1 3</mode>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>0</movement>
+    	<impact>0</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>0 0</velocity>
+        <sprite><position>10 10</position></sprite>
+        <sprite><position>10 700</position></sprite>
+      </event>
+      <event type="border" prototype="vborder" name="border">
+        <mode>1 1 1 3</mode>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>0</movement>
+    	<impact>0</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>0 0</velocity>
+        <sprite><position>10 10</position></sprite>
+        <sprite><position>880 10</position></sprite>
+      </event>
 	  <event type="ship" prototype="player" name="player">
         <mode>1 1 1 1</mode>
     	<created>0</created>

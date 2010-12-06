@@ -30,6 +30,15 @@
         <delay>100</delay>
       </animation>
     </prototype>
+    
+    <prototype id="bird">
+      <image>data/darkbird.png</image>
+      <animation>
+        <frames>8</frames>
+        <rows>1</rows>
+        <delay>100</delay>
+      </animation>
+    </prototype>
 	
 	<trigger type="start" lifetime="1">
 	  <event type="player" prototype="player" name="player">
@@ -46,8 +55,8 @@
     </trigger>
     
     <trigger type="coordinate" lifetime="1">
-      <box>400 300 400 200</box>
-      <event type="ship" prototype="player" name="sprite">
+      <box>480 300 400 200</box>
+      <event type="ship" prototype="bird" name="sprite">
         <mode>1 1 1 2</mode>
     	<created>0</created>
     	<destroyed>0</destroyed>
@@ -61,8 +70,8 @@
     </trigger>
     
     <trigger type="coordinate" lifetime="1">
-      <box>500 200 200 400</box>
-      <event type="ship" prototype="player" name="sprite">
+      <box>320 200 200 400</box>
+      <event type="ship" prototype="bird" name="sprite">
         <mode>1 1 1 2</mode>
     	<created>0</created>
     	<destroyed>0</destroyed>

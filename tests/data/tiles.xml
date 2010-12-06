@@ -13,7 +13,7 @@
 	<screen>
 	  <dimension>300 240</dimension>
 	  <gamesize>3 3</gamesize>
-	  <velocity>1 0</velocity>
+	  <velocity>2 1</velocity>
 	</screen>
 	
 	<map type="void">
@@ -22,7 +22,7 @@
     <map type="start">
       <position>0 0</position>
       <image>data/map1.png</image>
-      <velocity>1 0</velocity>
+      <velocity>1 1</velocity>
     </map>
     <map>
       <position>1 0</position>
@@ -78,7 +78,7 @@
     	<impact>0</impact>
     	<damage>0</damage>
         <vitality>1 1</vitality>
-        <velocity>1 0</velocity>
+        <velocity>2 1</velocity>
         <sprite><position>0 120</position></sprite>
       </event>
     </trigger>
