@@ -444,7 +444,7 @@ function hybridAnimation(parentId, totalWidth, totalHeight) {
 							frameIndex = frames;
 							if( cycles > 0 ){
 								cycles--;
-								if(callback !== null) {
+								if (typeof callback === "function") {
 									callback();
 								}
 							}
@@ -458,7 +458,7 @@ function hybridAnimation(parentId, totalWidth, totalHeight) {
 							frameIndex = 1;
 							if( cycles > 0 ){
 								cycles--;
-								if(callback !== null) {
+								if (typeof callback === "function") {
 									callback();
 								}
 							}
