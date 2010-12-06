@@ -1,0 +1,995 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - hybridAnimation</title>
+
+		<style type="text/css">
+			/* default.css */
+body
+{
+	font: 12px "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+	width: 800px;
+}
+
+.header
+{
+	clear: both;
+	background-color: #ccc;
+	padding: 8px;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+hr
+{
+	border: none 0;
+	border-top: 1px solid #7F8FB1;
+	height: 1px;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+#index
+{
+	margin-top: 24px;
+	float: left;
+	width: 160px;
+	position: absolute;
+	left: 8px;
+	background-color: #F3F3F3;
+	padding: 8px;
+}
+
+#content
+{
+	margin-left: 190px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #7F8FB1;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	width: 140px;
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #777;
+	font-style: italic;
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+		</style>
+	</head>
+
+	<body>
+<!-- ============================== header ================================= -->	
+		<!-- begin static/header.html -->
+		<div id="header">
+</div>
+		<!-- end static/header.html -->
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<div align="center"><a href="../index.html">Class Index</a>
+| <a href="../files.html">File Index</a></div>
+<hr />
+<h2>Classes</h2>
+<ul class="classList">
+	
+	<li><i><a href="../symbols/_global_.html">_global_</a></i></li>
+	
+	<li><a href="../symbols/hybridAnimation.html">hybridAnimation</a></li>
+	
+	<li><a href="../symbols/hybridBlit.html">hybridBlit</a></li>
+	
+	<li><a href="../symbols/hybridEvent.html">hybridEvent</a></li>
+	
+	<li><a href="../symbols/hybridGame.html">hybridGame</a></li>
+	
+	<li><a href="../symbols/hybridLoader.html">hybridLoader</a></li>
+	
+	<li><a href="../symbols/hybridMove.html">hybridMove</a></li>
+	
+	<li><a href="../symbols/hybridScreen.html">hybridScreen</a></li>
+	
+	<li><a href="../symbols/hybridSound.html">hybridSound</a></li>
+	
+	<li><a href="../symbols/hybridSprite.html">hybridSprite</a></li>
+	
+	<li><a href="../symbols/hybridSpritePrototype.html">hybridSpritePrototype</a></li>
+	
+	<li><a href="../symbols/hybridTile.html">hybridTile</a></li>
+	
+	<li><a href="../symbols/hybridTrigger.html">hybridTrigger</a></li>
+	
+	<li><a href="../symbols/resourceManager.html">resourceManager</a></li>
+	
+</ul>
+<hr />
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+<!-- ============================== class title ============================ -->
+			<h1 class="classTitle">
+				
+				Function Namespace hybridAnimation
+			</h1>
+
+<!-- ============================== class summary ========================== -->			
+			<p class="description">
+				
+				
+			
+				The animation object always belongs to a parent sprite (but is optional).
+Moves the sprite image containing the animation 'through' the animation window
+				
+				
+					<br /><i>Defined in: </i> &lt;/home/nils/repository/hybridjs/src/hybridSprite.js&gt;.
+				
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class hybridAnimation.">
+				<caption>Function Namespace Summary</caption>
+				<thead>
+					<tr>
+						<th scope="col">Constructor Attributes</th>
+						<th scope="col">Constructor Name and Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="attributes">&nbsp;</td>
+						<td class="nameDescription" >
+							<div class="fixedFont">
+								<b><a href="../symbols/hybridAnimation.html#constructor">hybridAnimation</a></b>(parentId, totalWidth, totalHeight)
+							</div>
+							<div class="description"></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class hybridAnimation.">
+					<caption>Method Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">hybridAnimation.<b><a href="../symbols/hybridAnimation.html#.getDelay">getDelay</a></b>()
+								</div>
+								<div class="description">Return animation speed</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">hybridAnimation.<b><a href="../symbols/hybridAnimation.html#.getDimension">getDimension</a></b>()
+								</div>
+								<div class="description">Returns width and height of single frame</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">hybridAnimation.<b><a href="../symbols/hybridAnimation.html#.getDirection">getDirection</a></b>()
+								</div>
+								<div class="description">Returns animation direction</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">hybridAnimation.<b><a href="../symbols/hybridAnimation.html#.getFrames">getFrames</a></b>()
+								</div>
+								<div class="description">Return number of frames in animation</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">hybridAnimation.<b><a href="../symbols/hybridAnimation.html#.getId">getId</a></b>()
+								</div>
+								<div class="description">Return id of parent sprite</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">hybridAnimation.<b><a href="../symbols/hybridAnimation.html#.getIndex">getIndex</a></b>()
+								</div>
+								<div class="description">Return current animation index</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">hybridAnimation.<b><a href="../symbols/hybridAnimation.html#.getRows">getRows</a></b>()
+								</div>
+								<div class="description">Return number of animations</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">hybridAnimation.<b><a href="../symbols/hybridAnimation.html#.setDelay">setDelay</a></b>(val)
+								</div>
+								<div class="description">Set animation speed (in milliseconds between frames)</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">hybridAnimation.<b><a href="../symbols/hybridAnimation.html#.setDirection">setDirection</a></b>(val)
+								</div>
+								<div class="description">Sets animation direction
+[forward | reverse]</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">hybridAnimation.<b><a href="../symbols/hybridAnimation.html#.setFrames">setFrames</a></b>(val)
+								</div>
+								<div class="description">Set number of frames in animation</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">hybridAnimation.<b><a href="../symbols/hybridAnimation.html#.setIndex">setIndex</a></b>(frame, row)
+								</div>
+								<div class="description">Sets current animation index</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">hybridAnimation.<b><a href="../symbols/hybridAnimation.html#.setRows">setRows</a></b>(val)
+								</div>
+								<div class="description">Set number of animations</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">hybridAnimation.<b><a href="../symbols/hybridAnimation.html#.start">start</a></b>(frameStart, rowstart, directionStart, loop, callback)
+								</div>
+								<div class="description">Starts animation loop</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">hybridAnimation.<b><a href="../symbols/hybridAnimation.html#.stop">stop</a></b>()
+								</div>
+								<div class="description">Stops animation</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+			<div class="details"><a name="constructor"> </a>
+				<div class="sectionTitle">
+					Function Namespace Detail
+				</div>
+				
+				<div class="fixedFont">
+						<b>hybridAnimation</b>(parentId, totalWidth, totalHeight)
+				</div>
+				
+				<div class="description">
+					
+					
+				</div>
+				
+				
+				
+				
+					
+						<dl class="detailList">
+						<dt class="heading">Parameters:</dt>
+						
+							<dt>
+								 <b>parentId</b>
+								
+							</dt>
+								<dd>Id of the sprite the animation belongs to</dd>
+						
+							<dt>
+								 <b>totalWidth</b>
+								
+							</dt>
+								<dd>The width of the sprite image</dd>
+						
+							<dt>
+								 <b>totalHeight</b>
+								
+							</dt>
+								<dd>The height of the sprite image</dd>
+						
+						</dl>
+					
+					
+					
+					
+					
+					
+					
+
+			</div>
+			
+
+<!-- ============================== field details ========================== -->		
+			
+
+<!-- ============================== method details ========================= -->		
+			
+				<div class="sectionTitle">
+					Method Detail
+				</div>
+				
+					<a name=".getDelay"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">hybridAnimation.</span><b>getDelay</b>()
+					
+					</div>
+					<div class="description">
+						Return animation speed
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>int</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getDimension"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">hybridAnimation.</span><b>getDimension</b>()
+					
+					</div>
+					<div class="description">
+						Returns width and height of single frame
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>array</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getDirection"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">hybridAnimation.</span><b>getDirection</b>()
+					
+					</div>
+					<div class="description">
+						Returns animation direction
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>string</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getFrames"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">hybridAnimation.</span><b>getFrames</b>()
+					
+					</div>
+					<div class="description">
+						Return number of frames in animation
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>int</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getId"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">hybridAnimation.</span><b>getId</b>()
+					
+					</div>
+					<div class="description">
+						Return id of parent sprite
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>int</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getIndex"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">hybridAnimation.</span><b>getIndex</b>()
+					
+					</div>
+					<div class="description">
+						Return current animation index
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>array</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getRows"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">hybridAnimation.</span><b>getRows</b>()
+					
+					</div>
+					<div class="description">
+						Return number of animations
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>int</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".setDelay"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">hybridAnimation.</span><b>setDelay</b>(val)
+					
+					</div>
+					<div class="description">
+						Set animation speed (in milliseconds between frames)
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>val</b>
+									
+								</dt>
+								<dd>Milliseconds delay</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".setDirection"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">hybridAnimation.</span><b>setDirection</b>(val)
+					
+					</div>
+					<div class="description">
+						Sets animation direction
+[forward | reverse]
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>val</b>
+									
+								</dt>
+								<dd>Direction</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".setFrames"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">hybridAnimation.</span><b>setFrames</b>(val)
+					
+					</div>
+					<div class="description">
+						Set number of frames in animation
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>val</b>
+									
+								</dt>
+								<dd>Number of frames</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".setIndex"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">hybridAnimation.</span><b>setIndex</b>(frame, row)
+					
+					</div>
+					<div class="description">
+						Sets current animation index
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>frame</b>
+									
+								</dt>
+								<dd>Current frame</dd>
+							
+								<dt>
+									<b>row</b>
+									
+								</dt>
+								<dd>Current row</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".setRows"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">hybridAnimation.</span><b>setRows</b>(val)
+					
+					</div>
+					<div class="description">
+						Set number of animations
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>val</b>
+									
+								</dt>
+								<dd>Number of animations</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".start"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">hybridAnimation.</span><b>start</b>(frameStart, rowstart, directionStart, loop, callback)
+					
+					</div>
+					<div class="description">
+						Starts animation loop
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>frameStart</b>
+									
+								</dt>
+								<dd>Pointer to frame to start from</dd>
+							
+								<dt>
+									<b>rowstart</b>
+									
+								</dt>
+								<dd>Pointer to animation row</dd>
+							
+								<dt>
+									<b>directionStart</b>
+									
+								</dt>
+								<dd>Animation direction</dd>
+							
+								<dt>
+									<b>loop</b>
+									
+								</dt>
+								<dd>Number of times this animation is looped. Values smaller zero mean infinitely.</dd>
+							
+								<dt>
+									<b>callback</b>
+									
+								</dt>
+								<dd>Callback function called after each animation cycle</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".stop"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">hybridAnimation.</span><b>stop</b>()
+					
+					</div>
+					<div class="description">
+						Stops animation
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					
+				
+			
+			
+<!-- ============================== event details ========================= -->		
+			
+			
+			<hr />
+		</div>
+
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Mon Dec 06 2010 15:30:02 GMT+0100 (CET)
+		</div>
+	</body>
+</html>
