@@ -1,0 +1,86 @@
+<?xml  version="1.0" encoding="utf-8" ?>
+<level id="1">
+
+	<game>
+	  <speed>3</speed>
+	  <border>screen</border>
+	  <collision>pixel</collision>
+	  <doubleBuffering>off</doubleBuffering>
+	  <voidMap>off</voidMap>
+	  <audio>off</audio>
+	</game>
+	
+	<screen>
+	  <dimension>900 720</dimension>
+	  <gamesize>1 1</gamesize>
+	  <velocity>0 0</velocity>
+	</screen>
+	
+	<map type="start">
+      <position>0 0</position>
+      <image>data/map.png</image>
+      <velocity>0 0</velocity>
+    </map>
+    
+	<prototype id="player">
+      <image>data/bird.png</image>
+      <animation>
+        <frames>8</frames>
+        <rows>1</rows>
+        <delay>100</delay>
+      </animation>
+    </prototype>
+	
+	<trigger type="start" lifetime="1">
+	  <event type="ship" prototype="player" name="player">
+        <mode>1 1 1 1</mode>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>0</movement>
+    	<impact>0</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>1 0</velocity>
+        <sprite><position>20 20</position></sprite>
+        <sprite><position>22 120</position></sprite>
+        <sprite><position>24 220</position></sprite>
+        <sprite><position>26 320</position></sprite>
+        <sprite><position>28 420</position></sprite>
+        <sprite><position>30 520</position></sprite>
+        <sprite><position>32 620</position></sprite>
+        <sprite><position>120 40</position></sprite>
+        <sprite><position>122 140</position></sprite>
+        <sprite><position>124 240</position></sprite>
+        <sprite><position>126 340</position></sprite>
+        <sprite><position>128 440</position></sprite>
+        <sprite><position>130 540</position></sprite>
+        <sprite><position>132 640</position></sprite>
+        <sprite><position>220 60</position></sprite>
+        <sprite><position>222 160</position></sprite>
+        <sprite><position>224 260</position></sprite>
+        <sprite><position>226 660</position></sprite>
+        <sprite><position>228 460</position></sprite>
+        <sprite><position>230 660</position></sprite>
+        <sprite><position>320 20</position></sprite>
+        <sprite><position>322 120</position></sprite>
+        <sprite><position>324 220</position></sprite>
+        <sprite><position>326 320</position></sprite>
+        <sprite><position>328 420</position></sprite>
+        <sprite><position>330 520</position></sprite>
+        <sprite><position>332 620</position></sprite>
+        <sprite><position>420 40</position></sprite>
+        <sprite><position>422 140</position></sprite>
+        <sprite><position>424 240</position></sprite>
+        <sprite><position>426 340</position></sprite>
+        <sprite><position>428 440</position></sprite>
+        <sprite><position>430 540</position></sprite>
+        <sprite><position>432 640</position></sprite>
+        <sprite><position>34 60</position></sprite>
+        <sprite><position>36 160</position></sprite>
+        <sprite><position>38 260</position></sprite>
+        <sprite><position>40 360</position></sprite>
+        <sprite><position>42 460</position></sprite>
+        <sprite><position>44 560</position></sprite>
+      </event>
+    </trigger>
+</level>

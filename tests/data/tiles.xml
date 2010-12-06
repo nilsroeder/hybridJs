@@ -1,0 +1,85 @@
+<?xml  version="1.0" encoding="utf-8" ?>
+<level id="1">
+
+	<game>
+	  <speed>1</speed>
+	  <border>screen</border>
+	  <collision>pixel</collision>
+	  <doubleBuffering>off</doubleBuffering>
+	  <voidMap>on</voidMap>
+	  <audio>off</audio>
+	</game>
+	
+	<screen>
+	  <dimension>300 240</dimension>
+	  <gamesize>3 3</gamesize>
+	  <velocity>1 0</velocity>
+	</screen>
+	
+	<map type="void">
+       <image>data/void.png</image>
+    </map>
+    <map type="start">
+      <position>0 0</position>
+      <image>data/map1.png</image>
+      <velocity>1 0</velocity>
+    </map>
+    <map>
+      <position>1 0</position>
+      <image>data/map2.png</image>
+    </map>
+    <map>
+      <position>2 0</position>
+      <image>data/map3.png</image>
+    </map>
+    <map>
+      <position>0 1</position>
+      <image>data/map4.png</image>
+    </map>
+    <map>
+      <position>1 1</position>
+      <image>data/map5.png</image>
+      <velocity>-1 -1</velocity>
+    </map>
+    <map>
+      <position>2 1</position>
+      <image>data/map6.png</image>
+    </map>
+    <map>
+      <position>0 2</position>
+      <image>data/map7.png</image>
+    </map>
+    <map>
+      <position>1 2</position>
+      <image>data/map8.png</image>
+      <velocity>-1 -1</velocity>
+    </map>
+    <map>
+      <position>1 3</position>
+      <image>data/map9.png</image>
+      <velocity>-1 -1</velocity>
+    </map>
+    
+	<prototype id="playerBig">
+      <image>data/bird.png</image>
+      <animation>
+        <frames>8</frames>
+        <rows>1</rows>
+        <delay>100</delay>
+      </animation>
+    </prototype>
+	
+	<trigger type="start" lifetime="1">
+	  <event type="ship" prototype="playerBig" name="player">
+        <mode>1 1 1 1</mode>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>0</movement>
+    	<impact>0</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>1 0</velocity>
+        <sprite><position>0 120</position></sprite>
+      </event>
+    </trigger>
+</level>
