@@ -92,7 +92,7 @@ function hybridLoader() {
 		*/
 		//if( (prtlist.length <= prtCount) && (maplist.length <= mapCount) ){
 			clearInterval(waitId);
-			if( (callback !== null) && (callback !== 0) ){
+            if (typeof callback === "function") 
 				callback();
 			}
 		//}

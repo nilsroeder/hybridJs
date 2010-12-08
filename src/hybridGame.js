@@ -36,7 +36,7 @@ function hybridGame() {
 			this.setBlit(blit);
 			this.setCoordinateTrigger(0);
 		
-			if( (callback !== null) && (callback !== 0) && (callback !== undefined) ){
+            if (typeof callback === "function") {
 				callback();
 			}
 		},
@@ -71,7 +71,7 @@ function hybridGame() {
 			// start game loop
 			this.run();
 			// signal game has started
-			if( (callback !== null) && (callback !== 0) && (callback !== undefined) ){
+            if (typeof callback === "function") {
 				callback();
 			}	
 		},
