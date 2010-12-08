@@ -28,7 +28,6 @@ function hybridGame() {
 		 * @param callback Callback function to be called when initialization is finished
 		 */
 		init: function(xpos, ypos, callback) {
-			//document.writeln("init start");
 			this.stop();
 			resourceManager.init();
 			var blit     = hybridBlit();
@@ -40,7 +39,6 @@ function hybridGame() {
 			if( (callback !== null) && (callback !== 0) && (callback !== undefined) ){
 				callback();
 			}
-			//document.writeln("init end");
 		},
 		/**
 		 * Uses the hybridLoader to load game data
@@ -48,10 +46,8 @@ function hybridGame() {
 		 * @param callback Callback function to be called when loading is finished
 		 */
 		load: function(file, callback){
-			//document.writeln("game load start");
 			var loader   = hybridLoader();
 			loader.load(file, callback);
-			//document.writeln("game load end");
 		},
 		/**
 		 * Initializes the blitting system and the behaviour loop.
@@ -60,11 +56,8 @@ function hybridGame() {
 		 * @param callback Callback function to be called when game loop is started
 		 */
 		start: function(callback) {
-			//document.writeln("game start start");
 			blit.init();
-			//document.writeln("game start 1");
 			move.init();
-			//document.writeln("game start 2");
 			this.setSpeed(resourceManager.getSpeed());
 			this.setCoordinateTrigger(resourceManager.getTriggerByType("coordinate"));
 			// execute all "start" trigger events
@@ -75,15 +68,12 @@ function hybridGame() {
 					trigger.setLifetime(trigger.getLifetime()-1);
 				});
 			}
-			//document.writeln("game start 3");
 			// start game loop
 			this.run();
-			//document.writeln("game start 4");
 			// signal game has started
 			if( (callback !== null) && (callback !== 0) && (callback !== undefined) ){
 				callback();
 			}	
-			//document.writeln("game start end");
 		},
 		/**
 		 * Stops the game loop
@@ -102,15 +92,10 @@ function hybridGame() {
 		run: function() {
 			var game = this;
 			runId = setInterval(function(){
-				//document.writeln("game loop start");
 				move.moveFrame();
-				//document.writeln("game loop move");
 				game.checkTrigger();
-				//document.writeln("game loop trigger");
-				game.gameplay();
-				//document.writeln("game loop gameplay");
     			blit.blitFrame();
-    			//document.writeln("game loop blit");
+    			game.gameplay();
 			}, speed);
 		},
 		/**

@@ -219,15 +219,10 @@ function hybridMove() {
 		 * Viewport scrolling, sprite movement, collision detection and 'dead' sprite removal
 		 */
 		moveFrame: function() {
-			//document.writeln("move frame1");
 			screen.move();
-			//document.writeln("move frame2");
 			moveSprites();
-			//document.writeln("move frame3");
 			checkCollision();
-			//document.writeln("move frame4");
 			cleanupSprites();
-			//document.writeln("move frame5");
 		}
 	};
 };

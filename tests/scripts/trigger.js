@@ -65,9 +65,22 @@ function hybridSpriteGameplay(spr) {
 	return pub;
 };
 
+function drawTriggerBoxes(){
+	var triggerList = resourceManager.getTriggerByType("coordinate");
+	var context = resourceManager.getScreen().getContext();
+	context.strokeStyle = '#f00';
+	context.lineWidth   = 1;
+	$.each(triggerList, function(index, trigger){
+		context.strokeRect(trigger.getPosition()[0], trigger.getPosition()[1], trigger.getDimension()[0], trigger.getDimension()[1]);
+	});
+	
+	
+};
+
 var fps = 0;
 function gameplay(){
 	fps++;
+	drawTriggerBoxes();
 };
 
 var game;

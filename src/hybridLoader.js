@@ -25,22 +25,17 @@ function hybridLoader() {
 		
 		$("#loading").text("parsing map data");
 		parseMap(xml);
-		//document.writeln("xmlReader map parsed");
 
 		$("#loading").text("parsing sound data");
 		parseSounds(xml);
-		//document.writeln("xmlReader sounds parsed");
 		
 		$("#loading").text("parsing image data");
 		parsePrototypes(xml);
-		//document.writeln("xmlReader prototypes parsed");
 		
 		$("#loading").text("parsing event data");
 		parseTrigger(xml);
-		//document.writeln("xmlReader trigger parsed");
 		
 		waitId = setInterval(waitForResources, 100);
-		//document.writeln("xmlReader end");
 	};
 	/**
 	 * Writes XML game data
@@ -356,18 +351,6 @@ function hybridLoader() {
 		 */
 		load: function(file, cb){
 			callback = cb;
-			/*
-			$('#loading').ajaxError(function(e, xhr, settings, exception) {
-			  if (settings.url == 'ajax/missing.html') {
-			    $(this).text('Triggered ajaxError handler.');
-			  }	
-			  alert('error in: ' + settings.url + ' \n'+'error:\n' + xhr.responseText ); 
-			  //alert(e);
-			  //alert(xhr);
-			  //alert(settings);
-			  //alert(exception);
-			});
-			*/
 			$("#loading").text("before parsing");
 			//if( navigator.onLine ) {
 			$.ajax({

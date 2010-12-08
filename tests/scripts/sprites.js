@@ -9,7 +9,9 @@ function hybridSpriteGameplay(spr) {
 	
 	//=======================CREATION==========================
 	var created0 = function(){
-		sprite.getAnimation().start(0, 0, 'forward', -1, null);
+		if(sprite.getAnimation() !== null){
+			sprite.getAnimation().start(0, 0, 'forward', -1, null);
+		}
 	};
 	//=======================DESTRUCTION=======================
 	var destroyed0 = function(){
@@ -23,6 +25,7 @@ function hybridSpriteGameplay(spr) {
 	};
 	//=======================DAMAGE============================
 	var damage0 = function(force){
+		sprite.setVelocity(sprite.getVelocity()[0]*-1, sprite.getVelocity()[1]*-1);
 	};
 	
 	var pub = {};
