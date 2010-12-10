@@ -1,0 +1,23 @@
+<?xml  version="1.0" encoding="utf-8" ?>
+<level id="1">
+	<game>
+	  <speed>3</speed>
+	  <border>screen</border>
+	  <collision>pixel</collision>
+	  <doubleBuffering>off</doubleBuffering>
+	  <voidMap>off</voidMap>
+	  <audio>off</audio>
+	</game>
+	
+	<screen>
+	  <dimension>600 400</dimension>
+	  <gamesize>1 1</gamesize>
+	  <velocity>0 0</velocity>
+	</screen>
+	
+	<map type="start">
+      <position>0 0</position>
+      <image>data/owl.png</image>
+      <velocity>0 0</velocity>
+    </map>
+</level>

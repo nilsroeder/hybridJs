@@ -1,0 +1,50 @@
+<?xml  version="1.0" encoding="utf-8" ?>
+<level id="1">
+
+	<game>
+	  <speed>3</speed>
+	  <border>screen</border>
+	  <collision>pixel</collision>
+	  <doubleBuffering>off</doubleBuffering>
+	  <voidMap>off</voidMap>
+	  <audio>off</audio>
+	</game>
+	
+	<screen>
+	  <dimension>600 400</dimension>
+	  <gamesize>1 1</gamesize>
+	  <velocity>0 0</velocity>
+	</screen>
+	
+	<map type="start">
+      <position>0 0</position>
+      <image>data/field.png</image>
+      <velocity>0 0</velocity>
+    </map>
+    
+	<prototype id="white">
+      <image>data/block-white.png</image>
+    </prototype>
+    
+    <prototype id="black">
+      <image>data/block-orange.png</image>
+    </prototype>
+    
+    <prototype id="bar">
+      <image>data/bar.png</image>
+    </prototype>
+    
+	<trigger type="start" lifetime="1">
+	  <event type="bar" prototype="bar" name="bar">
+        <mode>1 1 1 1</mode>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>1</movement>
+    	<impact>0</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>1 0</velocity>
+        <sprite><position>64 54</position></sprite>
+      </event>
+    </trigger>
+</level>
