@@ -2,25 +2,92 @@
  * @namespace
  *
  * Handles the game loop and the necessary initialization
- * 
- * runId 	Id of the game loop thread
- * blit		local copy of the engine's blit object
- * move		local copy of the engine's move object
- * trigger	local copy of the engine's trigger object
- * speed	game loop speed in milliseconds
  */
 function hybridGame() {
-	// Id of the game loop thread
-	var runId = 0;
+	// Id of the game loop blit thread
+	var blitId = 0;
+	// Id of the game loop gameplay thread
+	var stepId = 0;
 	// local copy of the engine's blit object
 	var blit;
 	// local copy of the engine's move object
 	var move;
 	// local copy of the coordinate trigger list
 	var coordinateTrigger;
-	// game loop speed in milliseconds
-	var speed;
+	// game loop display speed in milliseconds
+	var displaySpeed;
+	// game loop gameplay speed in milliseconds
+	var gameSpeed;
 	
+	var setBlit = function(blt){
+		blit = blt;
+	};
+	var setMove = function(mv){
+		move = mv;
+	};
+	var setCoordinateTrigger = function(list){
+		coordinateTrigger = list;
+	};
+	var checkTrigger = function(){
+		if( (coordinateTrigger !== null) && (coordinateTrigger.length > 0) ){
+			$.each(coordinateTrigger, function(index, trigger){
+				if( trigger.getLifetime() > 0 ){
+					var playerList = resourceManager.getSpritesByType("player");
+					if( playerList.length > 0 ) {
+						$.each(playerList, function(index, player){
+							if( move.boxCollision(player, trigger) ){
+								trigger.triggerEvents();
+								trigger.setLifetime(trigger.getLifetime()-1);
+							}
+						});
+					}
+				}
+			});
+		}
+	};
+	var setSpeed = function(dspeed, gspeed){
+		displaySpeed = dspeed;
+		gameSpeed = gspeed;
+		if(f_isRunning()){
+			f_stop();
+			f_run();
+		}
+	};
+	var getSpeed = function(){
+		return [displaySpeed, gameSpeed];
+	};
+	var f_stop = function() {
+		clearInterval(blitId);
+		blitId = 0;
+		clearTimeout(stepId);
+		stepId = 0;
+	};
+	var f_step = function(){
+		stepId = setTimeout(function(){
+			move.moveFrame();
+			checkTrigger();
+			gameplayHook();
+			f_step();
+		}, gameSpeed);
+	};
+	var f_run = function() {
+		blitId = setInterval(function(){
+			blit.blitFrame();
+			displayHook();
+		}, displaySpeed);
+		f_step();
+	};
+	var f_isRunning = function() {
+		if( blitId !== 0 ){
+			return true;
+		}
+		return false;
+	};
+	var gameplayHook = function() {
+	};
+	var displayHook = function() {
+	};
+
 	/** @scope hybridGame */
 	return{
 		/**
@@ -28,15 +95,15 @@ function hybridGame() {
 		 * @param callback Callback function to be called when initialization is finished
 		 */
 		init: function(xpos, ypos, callback) {
-			this.stop();
+			f_stop();
 			resourceManager.init();
 			var blit     = hybridBlit();
 			var move     = hybridMove();
-			this.setMove(move);
-			this.setBlit(blit);
-			this.setCoordinateTrigger(0);
+			setMove(move);
+			setBlit(blit);
+			setCoordinateTrigger(0);
 		
-            if (typeof callback === "function") {
+            if( typeof callback === "function" ){
 				callback();
 			}
 		},
@@ -58,9 +125,9 @@ function hybridGame() {
 		start: function(callback) {
 			blit.init();
 			move.init();
-			this.setSpeed(resourceManager.getSpeed());
-			this.setCoordinateTrigger(resourceManager.getTriggerByType("coordinate"));
-			// execute all "start" trigger events
+			setSpeed(resourceManager.getDisplaySpeed(), resourceManager.getGameSpeed());
+			setCoordinateTrigger(resourceManager.getTriggerByType("coordinate"));
+			// execute all "start" trigger events on start-up
 			var startList = resourceManager.getTriggerByType("start");
 			if( startList.length > 0 ) {
 				$.each(startList, function(index, trigger){
@@ -69,122 +136,58 @@ function hybridGame() {
 				});
 			}
 			// start game loop
-			this.run();
+			f_run();
 			// signal game has started
-            if (typeof callback === "function") {
+            if( typeof callback === "function" ){
 				callback();
 			}	
 		},
 		/**
 		 * Stops the game loop
 		 */
-		stop: function() {
-			clearInterval(runId);
-			runId = 0;
-		},
+		stop: f_stop,
 		/**
-		 * Game loop. Runs in millisecond intervals definded by game speed.
+		 * Game loop. Runs in millisecond intervals defined by game speed.
 		 * Moves background and sprites and does the collision handling.
 		 * Checks all triggers.
 		 * Executes userspace gameplay function
 		 * Displays everything.
 		 */
-		run: function() {
-			var game = this;
-			runId = setInterval(function(){
-				move.moveFrame();
-				game.checkTrigger();
-    			blit.blitFrame();
-    			game.gameplay();
-			}, speed);
-		},
+		run: f_run,
 		/**
 		 * Returns true if game loop is running, false otherwise.
 		 * @return boolean
 		 */
-		isRunning: function() {
-			if( runId !== 0 ){
-				return true;
-			}
-			return false;
-		},
+		isRunning: f_isRunning,
 		/**
 		 * Stops the game loop and resets the resource manager.
 		 */
 		quit: function() {
-			this.stop();
+			f_stop();
 			
 			blit     = 0;
 			move     = 0;
 			position = [0, 0];
-			speed    = 0;
+			displaySpeed       = 0;
+			gameSpeed          = 0;
 			coordinateTrigger  = 0;
 			resourceManager.init();
 		},
 		/**
-		 * Sets the blitting system
-		 * TODO check if this shouldn't be private
+		 * Userspace gameplay hook
 		 */
-		setBlit: function(blt){
-			blit = blt;
-		},
-		/**
-		 * Sets the move system
-		 * TODO check if this shouldn't be private
-		 */
-		setMove: function(mv){
-			move = mv;
-		},
-		/**
-		 * Sets the coordinate triggers
-		 * TODO check if this shouldn't be private
-		 */
-		setCoordinateTrigger: function(list){
-			coordinateTrigger = list;
-		},
-		/**
-		 * Trigger check and execute step
-		 */
-		checkTrigger: function(){
-			if( (coordinateTrigger !== null) && (coordinateTrigger.length > 0) ){
-				$.each(coordinateTrigger, function(index, trigger){
-					if( trigger.getLifetime() > 0 ){
-						var playerList = resourceManager.getSpritesByType("player");
-						if( playerList.length > 0 ) {
-							$.each(playerList, function(index, player){
-								if( move.boxCollision(player, trigger) ){
-									trigger.triggerEvents();
-									trigger.setLifetime(trigger.getLifetime()-1);
-								}
-							});
-						}
-					}
-				});
+		setGameplayHook: function(method){
+			if( typeof method === "function" ){
+				gameplayHook = method;
 			}
 		},
 		/**
-		 * Sets the game loop speed
-		 * @param sp speed in milliseconds
-		 *  TODO check if this shouldn't be private
+		 * Userspace display hook
 		 */
-		setSpeed: function(sp){
-			speed = sp;
-			if(this.isRunning()){
-				this.stop();
-				this.run();
+		setDisplayHook: function(method){
+			if( typeof method === "function" ){
+				displayHook = method;
 			}
-		},
-		/**
-		 * Returns the game loop speed
-		 * @return int
-		 */
-		getSpeed: function(){
-			return speed;
-		},
-		/**
-		 * Userspace gameplay function
-		 */
-		gameplay: function() {
 		}
 	};
 };

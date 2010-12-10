@@ -78,26 +78,16 @@ function drawTriggerBoxes(){
 };
 
 var fps = 0;
-function gameplay(){
+function fpsCounter(){
 	fps++;
-	drawTriggerBoxes();
-};
-
-var game;
-function load() {
-	$('<div id="hybridRoot" style="overflow: hidden; z-index: 0; width: 1010px; height: 735px; position: absolute; margin-left: 0px; margin-top: 0px;">').appendTo("body");
-	game          = hybridGame();
-	game.gameplay = gameplay;
-	game.init(0, 0, null);
-	game.load("data/trigger.xml", start);
 };
 
 function start(){
-	$('<div id="itext" style="background: #ddd; overflow: hidden; z-index: 1; width: 200px; height: 40px; position: absolute; margin-left: 809px; margin-top: 1px;">').appendTo("body");
-	game.start(frameCounter);
+	$('<div id="itext" style="background: #ddd; overflow: hidden; z-index: 1; width: 200px; height: 40px; position: absolute; margin-left: 700px; margin-top: -700px;">').appendTo("body");
+	game.start(fpsDisplay);
 };
 
-function frameCounter(){
+function fpsDisplay(){
 	var list = resourceManager.getSpritesByName("player");
 	var player = list[0];
 	runId = setInterval(function(){
@@ -107,7 +97,12 @@ function frameCounter(){
 	
 };
 
+var game;
 //on page load
 $(function() {
-	load();
+	$('<div id="hybridRoot">').appendTo("body");
+	game = hybridGame();
+	game.setDisplayHook( fpsCounter );
+	game.init(0, 0, null);
+	game.load("data/trigger.xml", start);
 });

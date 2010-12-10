@@ -2,7 +2,8 @@
 <level id="1">
 
 	<game>
-	  <speed>1</speed>
+	  <displaySpeed>1</displaySpeed>
+	  <gameSpeed>25</gameSpeed>
 	  <border>screen</border>
 	  <collision>pixel</collision>
 	  <doubleBuffering>off</doubleBuffering>

@@ -104,9 +104,13 @@ function hybridLoader() {
 		$(xml).find("game").each(function()
 		{
 			// compulsory
-			var speed = $(this).find("speed").text();
-			if( speed !== undefined ){
-				resourceManager.setSpeed(speed);
+			var displaySpeed = $(this).find("displaySpeed").text();
+			if( displaySpeed !== undefined ){
+				resourceManager.setDisplaySpeed(displaySpeed);
+			}
+			var gameSpeed = $(this).find("gameSpeed").text();
+			if( gameSpeed !== undefined ){
+				resourceManager.setGameSpeed(gameSpeed);
 			}
 			
 			// optional

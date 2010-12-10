@@ -20,8 +20,10 @@ var resourceManager = (function() {
 	var triggerList   = [];
 	// viewport
 	var screen;
+	// display speed
+	var displaySpeed;
 	// game speed
-	var speed;
+	var gameSpeed;
 	// game border beyond sprites are removed [screen | map]
 	var border          = "screen";
 	// double buffering flag. default true
@@ -148,18 +150,32 @@ var resourceManager = (function() {
 			return border;
 		},
 		/**
+		 * Sets display speed indicator
+		 * @param val Game speed
+		 */
+		setDisplaySpeed: function(val) {
+			displaySpeed = val;
+		},
+		/**
+		 * Returns display speed indicator
+		 * @return int
+		 */
+		getDisplaySpeed: function() {
+			return displaySpeed;
+		},
+		/**
 		 * Sets game speed indicator
 		 * @param val Game speed
 		 */
-		setSpeed: function(val) {
-			speed = val;
+		setGameSpeed: function(val) {
+			gameSpeed = val;
 		},
 		/**
 		 * Returns game speed indicator
 		 * @return int
 		 */
-		getSpeed: function() {
-			return speed;
+		getGameSpeed: function() {
+			return gameSpeed;
 		},
 		/**
 		 * Returns hybridScreen object
