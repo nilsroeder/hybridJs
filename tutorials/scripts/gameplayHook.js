@@ -11,6 +11,12 @@ function hybridSpriteGameplay(spr) {
 	};
 	var movement0 = function(){
 	};
+	var movement1 = function(){
+		sprite.setPosition(sprite.getPosition()[0]+sprite.getVelocity()[0], sprite.getPosition()[1]);
+		if(sprite.getPosition()[0] > 542){
+			sprite.setPosition(64, sprite.getPosition()[1]);
+		}
+	};
 	var impact0 = function(force){
 	};
 	var damage0 = function(force){
@@ -41,6 +47,7 @@ function hybridSpriteGameplay(spr) {
 		getMovement: function(val){
 			switch(val){
 				case 0: return movement0; break;
+				case 1: return movement1; break;
 				default: return movement0;
 			}
 		},
