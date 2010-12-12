@@ -8,18 +8,15 @@
  * e.g. a tile at 3rd column, 4th row would have coordinate [2,3].
  */
 function hybridTile() {
-	// absolute tile position in "tiles"
-	var position  = [2];
-	// tile scrolling velocity. Overwrites viewport velocity
-	var velocity  = [0, 0];
-	// tile image string
-	var image     = '';
-	// tile id. Id [0] is reserved for the void tile
-	var id        = 0;
-	// ?
-	var active    = false;
-	// loading flag to indicate whether or not image is loaded
-	var ready     = false;
+	var position  = [0, 0], // absolute tile position in "tiles"
+        velocity  = [0, 0], // tile scrolling velocity. Overwrites viewport velocity
+        image     = '', // tile image string
+        id        = 0, // tile id. Id [0] is reserved for the void tile
+        active    = false, // ?
+        ready     = false, // loading flag to indicate whether or not image is loaded
+        X = 0,
+        Y = 1;
+
 
 	/** @scope hybridTile */
 	return {
@@ -68,8 +65,8 @@ function hybridTile() {
 		 * @param ypos Vertical position
 		 */
 		setPosition: function(xpos, ypos) {
-			position[0] = parseInt(xpos, 10);
-			position[1] = parseInt(ypos, 10);
+			position[X] = parseInt(xpos, 10);
+			position[Y] = parseInt(ypos, 10);
 		},
 		/**
 		 * Returns the tile position as array in form [xpos, ypos]
@@ -84,8 +81,8 @@ function hybridTile() {
 		 * @param yvel Vertical speed
 		 */
 		setVelocity: function(xvel, yvel) {
-			velocity[0] = parseInt(xvel, 10);
-			velocity[1] = parseInt(yvel, 10);
+			velocity[X] = parseInt(xvel, 10);
+			velocity[Y] = parseInt(yvel, 10);
 		},
 		/**
 		 * Return the tile's scrolling velocity as array in form [xvel, yvel]
