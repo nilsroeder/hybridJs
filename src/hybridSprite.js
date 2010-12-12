@@ -9,11 +9,11 @@
  */
 function hybridSprite() {
 	// sprite position [x-axis, y-axis]
-	var position  = [2];
+	var position  = [0, 0];
 	// width and height of the displayed image (including animation corrections)
-	var dimension = [2];
+	var dimension = [0, 0];
 	// sprite velocity [x-vel , y-vel]
-	var velocity  = [2];
+	var velocity  = [0, 0];
 	// image url
 	var image;
 	// holds a binary representation of the image pixels
