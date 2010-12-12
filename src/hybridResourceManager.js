@@ -34,9 +34,17 @@ var resourceManager = (function() {
 	var audio			= true;
 	// pixel accurate collision flag. default true
 	var collision		= true;
+	// debug mode flag
+	var debug			= false;
 
 	/** @scope resourceManager */
 	return {
+		setDebug: function(flag){
+			debug = flag;
+		},
+		getDebug: function(){
+			return debug;
+		},
 		/**
 		 * Initializes the resource manager, required before use.
 		 * Inits the hybridScreen, active sprite list, soundlist, prototypelist, triggerlist and resets game speed.
