@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+        
+    </head>
+    <body>
+        <h1>Test</h1>
+
+
+        <script type="text/javascript" src="../src/hybridCore.js"></script>
+        <script type="text/javascript" src="../src/hybridGame.js"></script>
+        <script type="text/javascript" src="../src/hybridScreen.js"></script>
+        <script type="text/javascript">
+            (function() {
+                 var g = new Hybrid.Game();
+                 console.dir(g);
+                 g.start();
+
+                 var s = new Hybrid.Screen();
+                 s.setGameDimension(12, 12);
+                 console.dir(s.getGameDimension());
+                 s.publicUsingPrivate();
+             })();
+        </script>
+    </body>
+</html>
