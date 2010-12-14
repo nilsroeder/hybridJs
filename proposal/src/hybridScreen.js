@@ -9,22 +9,16 @@ var Hybrid = (function(Hybrid) {
         function privateFunction() {
             console.info('i\'m private ' + this.dimension[0]);
         }
-
+        
         return {
-            constructor: Screen, // !!!: constructor is statement important 
-            setGameDimension: function(w, h) {
-                this.gamesize[Hybrid.WIDTH] = w;
-                this.gamesize[Hybrid.HEIGHT] = h;
-            },
-            getGameDimension: function() {
-                return this.gamesize;
-            },
-            setPosition: function(x, y) {
-                this.position[Hybrid.X] = x;
-                this.position[Hybrid.Y] = y;
-            },
+            constructor: Screen, 
+            get gamesize() { return this._gamesize; },
+            set gamesize(val) { this._gamesize = val; },
+            get dimension() { return this._dimension; },
+            set dimension(val) { this._dimension = val; },
+            get position() { return this._position; },
+            set position(val) { this._position = val; },
             publicUsingPrivate: function() {
-                // !!!: note the *.call(this)
                 privateFunction.call(this);
             }
         }
