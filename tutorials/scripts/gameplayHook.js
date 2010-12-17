@@ -13,11 +13,17 @@ function hybridSpriteGameplay(spr) {
 	};
 	var movement1 = function(){
 		sprite.setPosition(sprite.getPosition()[0]+sprite.getVelocity()[0], sprite.getPosition()[1]);
-		if(sprite.getPosition()[0] > 542){
-			sprite.setPosition(64, sprite.getPosition()[1]);
+		if(sprite.getPosition()[0] > 354){
+			sprite.setPosition(38, sprite.getPosition()[1]);
 		}
 	};
+	var movement2 = function(){
+		sprite.setPosition(sprite.getPosition()[0]+sprite.getVelocity()[0], sprite.getPosition()[1]+sprite.getVelocity()[1]);
+	};
 	var impact0 = function(force){
+	};
+	var impact1 = function(force){
+		sprite.setVelocity(0, 0);
 	};
 	var damage0 = function(force){
 	};
@@ -48,6 +54,7 @@ function hybridSpriteGameplay(spr) {
 			switch(val){
 				case 0: return movement0; break;
 				case 1: return movement1; break;
+				case 2: return movement2; break;
 				default: return movement0;
 			}
 		},
@@ -57,6 +64,7 @@ function hybridSpriteGameplay(spr) {
 		getImpact: function(val){
 			switch(val){
 				case 0: return impact0; break;
+				case 1: return impact1; break;
 				default: return impact0;
 			}
 		},

@@ -105,17 +105,14 @@ function hybridMove() {
         				}
         				// collision effects
         				if( (collided && pixelaccurate) || !pixelaccurate ){
+        					// CHECK IMPACT
+        					// sprite A and B are both solid, so let them collide
+        					if( (spriteA.getMode()[0] > 0) && (spriteB.getMode()[0] > 0) ) {
+       							spriteA.impact(spriteB.getMode()[0]);
+       							spriteB.impact(spriteA.getMode()[0]);
+        					}
+        					// only different channels can damage each other
         					if( spriteA.getMode()[3] !== spriteB.getMode()[3]) {
-        						// CHECK IMPACT
-        						// sprite A is solid
-        						if( spriteA.getMode()[0] > 0 ) {
-        							// sprite B is solid
-        							if( spriteB.getMode()[0] > 0 ) {
-        								// let them collide
-        								spriteA.impact(spriteB.getMode()[0]);
-        								spriteB.impact(spriteA.getMode()[0]);
-        							}
-        						}
         						// CHECK DAMAGE
         						// spriteA takes damage
         						if( spriteA.getMode()[2] > 0 ){
@@ -163,8 +160,6 @@ function hybridMove() {
 	 * // FIXME ImageData corrupted, probably due to used when not yet ready
 	 */
 	var checkCollisionPixel = function(spriteA, spriteB, srcxA, srcyA, srcxB, srcyB, width, height) {
-		return true;
-		/*
 		var dataA     = spriteA.getImageData();
 		var dataB     = spriteB.getImageData();
 		
@@ -177,7 +172,6 @@ function hybridMove() {
 			}
 		}
 		return false;
-		*/
 	};
     /**
      * @private

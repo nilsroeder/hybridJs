@@ -1,0 +1,105 @@
+<?xml  version="1.0" encoding="utf-8" ?>
+<level id="1">
+	<game>
+	  <displaySpeed>1</displaySpeed>
+	  <gameSpeed>15</gameSpeed>
+	  <border>screen</border>
+	  <collision>pixel</collision>
+	  <doubleBuffering>off</doubleBuffering>
+	  <voidMap>off</voidMap>
+	  <audio>off</audio>
+	</game>
+	
+	<screen>
+	  <dimension>400 267</dimension>
+	  <gamesize>1 1</gamesize>
+	  <velocity>0 0</velocity>
+	</screen>
+	
+	<map type="start">
+      <position>0 0</position>
+      <image>data/owlgrid.png</image>
+      <velocity>0 0</velocity>
+    </map>
+    
+    <prototype id="bar">
+      <image>data/bar.png</image>
+    </prototype>
+    
+    <prototype id="bottom">
+      <image>data/bottom-line.png</image>
+    </prototype>
+    
+    <prototype id="wall">
+      <image>data/wall-line.png</image>
+    </prototype>
+    
+    <prototype id="white">
+      <image>data/block-white.png</image>
+    </prototype>
+    
+    <prototype id="black">
+      <image>data/block-orange.png</image>
+    </prototype>
+    
+    <trigger type="start" lifetime="1">
+      <event type="block" prototype="black" name="block">
+        <mode>1 1 1 2</mode>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>2</movement>
+    	<impact>1</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>0 1</velocity>
+        <sprite><position>179 35</position></sprite>
+        <sprite><position>201 56</position></sprite>
+      </event>
+      <event type="block" prototype="white" name="block">
+        <mode>1 1 1 2</mode>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>2</movement>
+    	<impact>1</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>0 1</velocity>
+        <sprite><position>201 35</position></sprite>
+        <sprite><position>179 56</position></sprite>
+      </event>
+      <event type="bar" prototype="bar" name="bar">
+        <mode>0 1 1 1</mode>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>1</movement>
+    	<impact>0</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>1 0</velocity>
+        <sprite><position>38 39</position></sprite>
+      </event>
+      <event type="wall" prototype="bottom" name="floor">
+        <mode>1 1 1 3</mode>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>0</movement>
+    	<impact>0</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>0 0</velocity>
+        <sprite><position>35 233</position></sprite>
+      </event>
+      <event type="wall" prototype="wall" name="wall">
+        <mode>1 1 1 3</mode>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>0</movement>
+    	<impact>0</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>0 0</velocity>
+        <sprite><position>32 56</position></sprite>
+        <sprite><position>367 56</position></sprite>
+      </event>
+    </trigger>
+</level>

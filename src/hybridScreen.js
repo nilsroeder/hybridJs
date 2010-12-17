@@ -7,13 +7,13 @@
  */
 function hybridScreen() {
 	// width and height of the screen in 'maps'
-	var gamesize  = [2];
+	var gamesize  = [0 ,0];
 	// width and height of the screen in pixel
-	var dimension = [2];
+	var dimension = [0, 0];
 	// screen position within the map
-	var position  = [2];
+	var position  = [0, 0];
 	// viewport scroll velocity
-	var velocity  = [2];
+	var velocity  = [0, 0];
 	// html5 canvas 2D context
 	var context;
 	       

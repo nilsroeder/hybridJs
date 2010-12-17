@@ -90,12 +90,12 @@ function hybridLoader() {
 		}
 		if( (prtlist.length <= prtCount) && (maplist.length <= mapCount) && (sfxlist.length <= sfxCount) ){
 		*/
-		//if( (prtlist.length <= prtCount) && (maplist.length <= mapCount) ){
+		if( (prtlist.length <= prtCount) && (maplist.length <= mapCount) ){
 			clearInterval(waitId);
             if (typeof callback === "function"){
 				callback();
 			}
-		//}
+		}
 	};
 	/**
 	 * @private

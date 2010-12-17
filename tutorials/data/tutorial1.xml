@@ -11,14 +11,14 @@
 	</game>
 	
 	<screen>
-	  <dimension>600 400</dimension>
+	  <dimension>400 267</dimension>
 	  <gamesize>1 1</gamesize>
 	  <velocity>0 0</velocity>
 	</screen>
 	
 	<map type="start">
       <position>0 0</position>
-      <image>data/owl.png</image>
+      <image>data/owlgrid.png</image>
       <velocity>0 0</velocity>
     </map>
 </level>

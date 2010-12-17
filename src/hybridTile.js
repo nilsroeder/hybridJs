@@ -9,7 +9,7 @@
  */
 function hybridTile() {
 	// absolute tile position in "tiles"
-	var position  = [2];
+	var position  = [0, 0];
 	// tile scrolling velocity. Overwrites viewport velocity
 	var velocity  = [0, 0];
 	// tile image string

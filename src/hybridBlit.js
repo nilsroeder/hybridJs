@@ -114,11 +114,11 @@ function hybridBlit() {
 	};
 	/** 
 	 * @private
-	 * Single Buffer Display writes all changes directly to the screen.
+	 * Direct Buffer Display writes all changes directly to the screen.
 	 * This is the faster than Double Buffer Display but can cause the
 	 * screen to flicker occasionally.
 	 */
-	function singleBufferDisplay(){
+	function directBufferDisplay(){
 		blitMap();
 		blitSprites();
 	};
@@ -157,7 +157,7 @@ function hybridBlit() {
 				}
 				else{
 					bufferContext  = canvas.getContext("2d");
-					this.blitFrame = singleBufferDisplay;
+					this.blitFrame = directBufferDisplay;
 				}
 				// void tile setup
 				if( resourceManager.getVoidMap() ){
