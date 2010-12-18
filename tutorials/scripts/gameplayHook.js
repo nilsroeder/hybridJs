@@ -11,19 +11,29 @@ function hybridSpriteGameplay(spr) {
 	};
 	var movement0 = function(){
 	};
+	/**
+	 * Repetitive horizontal movement of the 'bar' 
+	 */
 	var movement1 = function(){
 		sprite.setPosition(sprite.getPosition()[0]+sprite.getVelocity()[0], sprite.getPosition()[1]);
 		if(sprite.getPosition()[0] > 354){
 			sprite.setPosition(38, sprite.getPosition()[1]);
 		}
 	};
+	/**
+	 * Simple velocity movement for the blocks
+	 */
 	var movement2 = function(){
 		sprite.setPosition(sprite.getPosition()[0]+sprite.getVelocity()[0], sprite.getPosition()[1]+sprite.getVelocity()[1]);
 	};
 	var impact0 = function(force){
 	};
+	/**
+	 * Stop falling blocks and change their type, so they can't be controlled as 'blocks' any longer
+	 */
 	var impact1 = function(force){
 		sprite.setVelocity(0, 0);
+		sprite.setType('immovable');
 	};
 	var damage0 = function(force){
 	};

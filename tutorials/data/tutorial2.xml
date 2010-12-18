@@ -36,7 +36,7 @@
     	<damage>0</damage>
         <vitality>1 1</vitality>
         <velocity>1 0</velocity>
-        <sprite><position>64 54</position></sprite>
+        <sprite><position>38 37</position></sprite>
       </event>
     </trigger>
 </level>

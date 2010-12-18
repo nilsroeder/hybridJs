@@ -11,7 +11,7 @@
 	</game>
 	
 	<screen>
-	  <dimension>600 400</dimension>
+	  <dimension>400 267</dimension>
 	  <gamesize>1 1</gamesize>
 	  <velocity>0 0</velocity>
 	</screen>
@@ -34,7 +34,7 @@
       <image>data/wall-line.png</image>
     </prototype>
     
-     <prototype id="white">
+    <prototype id="white">
       <image>data/block-white.png</image>
     </prototype>
     
@@ -52,9 +52,9 @@
     	<damage>0</damage>
         <vitality>1 1</vitality>
         <velocity>1 0</velocity>
-        <sprite><position>64 54</position></sprite>
+        <sprite><position>38 39</position></sprite>
       </event>
-      <event type="wall" prototype="bottom" name="b1">
+      <event type="wall" prototype="bottom" name="floor">
         <mode>1 1 1 3</mode>
     	<created>0</created>
     	<destroyed>0</destroyed>
@@ -63,10 +63,10 @@
     	<damage>0</damage>
         <vitality>1 1</vitality>
         <velocity>0 0</velocity>
-        <sprite><position>51 347</position></sprite>
+        <sprite><position>35 233</position></sprite>
       </event>
-      <event type="wall" prototype="wall" name="l1">
-        <mode>1 1 1 3</mode>
+      <event type="wall" prototype="wall" name="wall">
+        <mode>0 1 1 3</mode>
     	<created>0</created>
     	<destroyed>0</destroyed>
     	<movement>0</movement>
@@ -74,22 +74,12 @@
     	<damage>0</damage>
         <vitality>1 1</vitality>
         <velocity>0 0</velocity>
-        <sprite><position>46 52</position></sprite>
-      </event>
-      <event type="wall" prototype="wall" name="r1">
-        <mode>1 1 1 3</mode>
-    	<created>0</created>
-    	<destroyed>0</destroyed>
-    	<movement>0</movement>
-    	<impact>0</impact>
-    	<damage>0</damage>
-        <vitality>1 1</vitality>
-        <velocity>0 0</velocity>
-        <sprite><position>551 52</position></sprite>
+        <sprite><position>32 56</position></sprite>
+        <sprite><position>367 56</position></sprite>
       </event>
     </trigger>
-    <trigger type="diagonal">
-    	<event type="block" prototype="black" name="block">
+    <trigger type="diagonal" lifetime="-1">
+    	<event type="block" prototype="black" name="block1">
         <mode>1 1 1 2</mode>
     	<created>0</created>
     	<destroyed>0</destroyed>
@@ -98,10 +88,9 @@
     	<damage>0</damage>
         <vitality>1 1</vitality>
         <velocity>0 1</velocity>
-        <sprite><position>114 53</position></sprite>
-        <sprite><position>146 83</position></sprite>
+        <sprite><position>179 35</position></sprite>
       </event>
-      <event type="block" prototype="white" name="block">
+      <event type="block" prototype="white" name="block2">
         <mode>1 1 1 2</mode>
     	<created>0</created>
     	<destroyed>0</destroyed>
@@ -110,8 +99,29 @@
     	<damage>0</damage>
         <vitality>1 1</vitality>
         <velocity>0 1</velocity>
-        <sprite><position>146 53</position></sprite>
-        <sprite><position>114 83</position></sprite>
+        <sprite><position>200 35</position></sprite>
+      </event>
+      <event type="block" prototype="white" name="block3">
+        <mode>1 1 1 2</mode>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>2</movement>
+    	<impact>1</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>0 1</velocity>
+        <sprite><position>179 55</position></sprite>
+      </event>
+      <event type="block" prototype="black" name="block4">
+        <mode>1 1 1 2</mode>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>2</movement>
+    	<impact>1</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>0 1</velocity>
+        <sprite><position>200 55</position></sprite>
       </event>
     </trigger>
 </level>

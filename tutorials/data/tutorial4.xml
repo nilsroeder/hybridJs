@@ -43,7 +43,7 @@
     </prototype>
     
     <trigger type="start" lifetime="1">
-      <event type="block" prototype="black" name="block">
+      <event type="block" prototype="black" name="block1">
         <mode>1 1 1 2</mode>
     	<created>0</created>
     	<destroyed>0</destroyed>
@@ -53,9 +53,8 @@
         <vitality>1 1</vitality>
         <velocity>0 1</velocity>
         <sprite><position>179 35</position></sprite>
-        <sprite><position>201 56</position></sprite>
       </event>
-      <event type="block" prototype="white" name="block">
+      <event type="block" prototype="white" name="block2">
         <mode>1 1 1 2</mode>
     	<created>0</created>
     	<destroyed>0</destroyed>
@@ -64,8 +63,29 @@
     	<damage>0</damage>
         <vitality>1 1</vitality>
         <velocity>0 1</velocity>
-        <sprite><position>201 35</position></sprite>
-        <sprite><position>179 56</position></sprite>
+        <sprite><position>200 35</position></sprite>
+      </event>
+      <event type="block" prototype="white" name="block3">
+        <mode>1 1 1 2</mode>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>2</movement>
+    	<impact>1</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>0 1</velocity>
+        <sprite><position>179 55</position></sprite>
+      </event>
+      <event type="block" prototype="black" name="block4">
+        <mode>1 1 1 2</mode>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>2</movement>
+    	<impact>1</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>0 1</velocity>
+        <sprite><position>200 55</position></sprite>
       </event>
       <event type="bar" prototype="bar" name="bar">
         <mode>0 1 1 1</mode>
@@ -76,7 +96,7 @@
     	<damage>0</damage>
         <vitality>1 1</vitality>
         <velocity>1 0</velocity>
-        <sprite><position>38 37</position></sprite>
+        <sprite><position>38 39</position></sprite>
       </event>
       <event type="wall" prototype="bottom" name="floor">
         <mode>1 1 1 3</mode>
@@ -87,10 +107,10 @@
     	<damage>0</damage>
         <vitality>1 1</vitality>
         <velocity>0 0</velocity>
-        <sprite><position>35 231</position></sprite>
+        <sprite><position>35 233</position></sprite>
       </event>
       <event type="wall" prototype="wall" name="wall">
-        <mode>1 1 1 3</mode>
+        <mode>0 1 1 3</mode>
     	<created>0</created>
     	<destroyed>0</destroyed>
     	<movement>0</movement>
@@ -98,8 +118,8 @@
     	<damage>0</damage>
         <vitality>1 1</vitality>
         <velocity>0 0</velocity>
-        <sprite><position>32 54</position></sprite>
-        <sprite><position>367 54</position></sprite>
+        <sprite><position>32 56</position></sprite>
+        <sprite><position>367 56</position></sprite>
       </event>
     </trigger>
 </level>
