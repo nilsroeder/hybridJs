@@ -246,13 +246,13 @@ function hybridSprite() {
 		 * Impact hook
 		 * To be implemented in gameplay
 		 */
-		impact: function(force){
+		impact: function(other){
 		},
 		/**
 		 * Damage hook
 		 * To be implemented in gameplay
 		 */
-		damage: function(force){
+		damage: function(other){
 		},
 		/**
 		 * Creation hook

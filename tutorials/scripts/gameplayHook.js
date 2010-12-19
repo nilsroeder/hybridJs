@@ -28,42 +28,51 @@ function hybridSpriteGameplay(spr) {
 	/**
 	 * do nothing, needed
 	 */
-	var impact0 = function(force){
+	var impact0 = function(other){
 	};
 	/**
 	 * Stop falling blocks and change their type, so they can't be controlled as 'blocks' any longer
 	 */
-	var impact1 = function(force){
-		sprite.setVelocity(0, 0);
-		
+	var impact1 = function(other){
+		var stop  = false;
 		var group = resourceManager.getSpritesByType('block');
-		if( sprite.getType() === 'block' ){
-			
-			var name = sprite.getName();
-			var x    = 0;
-			
-			//if( force === 2 ){
-			if( false ){
-				if( name === 'block1' || name === 'block3' ){
-					x = 21;
+		
+		if( other.getName() === 'floor' ){
+			stop = true;
+		}
+		else {
+			var ydiff = other.getPosition()[1] - sprite.getPosition()[1];
+			// collision from the side, undo move don't stop
+			if( ydiff < 19){
+				var xdiff = 0;
+				// left side
+				if( sprite.getName() === 'block1' || sprite.getName() === 'block3'){
+					xdiff = 21;
 				}
-				else if( name === 'block2' || name === 'block4' ){
-					x = -21;
+				// right side
+				else if( sprite.getName() === 'block2' || sprite.getName() === 'block4'){
+					xdiff = -21;
 				}
+				// undo last move
 				$.each(group, function(index, block){
-					block.setPosition(block.getPosition()[0]+x, block.getPosition()[1]);
+					block.setPosition(block.getPosition()[0]+xdiff, block.getPosition()[1]);
 				});
 			}
+			// landed on top of another block, stop
 			else{
-				$.each(group, function(index, block){
-					block.setName('immovable');
-				});
-			
-				sprite.setType('immovable');
-				sprite.impact = impact0;
-				sprite.move   = movement0;
-				//sprite.setMode([1,0,0,2]);
+				stop = true;
 			}
+		}
+		
+		if( stop ){
+			$.each(group, function(index, block){
+				block.setName('immovable');
+			});
+		
+			sprite.setVelocity(0, 0);
+			sprite.setType('immovable');
+			sprite.impact = impact0;
+			sprite.move   = movement0;
 		}
 	};
 	/** @scope hybridSpriteGameplay */

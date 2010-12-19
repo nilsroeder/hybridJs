@@ -108,8 +108,8 @@ function hybridMove() {
         					// CHECK IMPACT
         					// sprite A and B are both solid, so let them collide
         					if( (spriteA.getMode()[0] > 0) && (spriteB.getMode()[0] > 0) ) {
-       							spriteA.impact(spriteB.getMode()[0]);
-       							spriteB.impact(spriteA.getMode()[0]);
+       							spriteA.impact(spriteB);
+       							spriteB.impact(spriteA);
         					}
         					// only different channels can damage each other
         					if( spriteA.getMode()[3] !== spriteB.getMode()[3]) {
@@ -119,7 +119,7 @@ function hybridMove() {
         							//spriteB damages
         							if( spriteB.getMode()[1] > 0 ) {
         								// sprite A receives damage from sprite Bs force
-        								spriteA.damage(spriteB.getMode()[1]);
+        								spriteA.damage(spriteB);
         							}
         						}
         						// spriteB takes damage
@@ -127,7 +127,7 @@ function hybridMove() {
         							//spriteA damages
         							if( spriteA.getMode()[1] > 0 ) {
         								// sprite B receives damage from sprite As force
-        								spriteB.damage(spriteA.getMode()[1]);
+        								spriteB.damage(spriteA);
         							}
         						}
         					}
@@ -157,7 +157,6 @@ function hybridMove() {
 	 * @private
 	 * Compares two overlapping binary image arrays pixel by pixel
 	 * // FIXME Coordinates have to be respective to the current animation frame
-	 * // FIXME ImageData corrupted, probably due to used when not yet ready
 	 */
 	var checkCollisionPixel = function(spriteA, spriteB, srcxA, srcyA, srcxB, srcyB, width, height) {
 		var dataA     = spriteA.getImageData();
