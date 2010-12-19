@@ -7,62 +7,20 @@
 function hybridSpriteGameplay(spr) {
 	var sprite = spr;
 	
-	//=======================CREATION==========================
-	var created0 = function(){
+	var created1 = function(){
 		sprite.getAnimation().start(0, 0, 'forward', -1, null);
 	};
-	//=======================DESTRUCTION=======================
-	var destroyed0 = function(){
-	};
-	//=======================MOVEMENT==========================
-	var movement0 = function(){
+	var movement1 = function(){
 		sprite.setPosition(sprite.getPosition()[0]+sprite.getVelocity()[0], sprite.getPosition()[1]+sprite.getVelocity()[1]);
 	};
-	//=======================IMPACT============================
-	var impact0 = function(force){
-	};
-	//=======================DAMAGE============================
-	var damage0 = function(force){
-	};
 	
-	var pub = {};
-	
-	pub.getCreated = function(val){
-		switch(val){
-			case 0: return created0; break;
-			default: return created0;
-		}
+	return{
+		getCreated: function(val){ return created1; },
+		getDestroyed: function(val){},
+		getMovement: function(val){ return movement1; },
+		getImpact: function(val){},
+		getDamage: function(val){}
 	};
-	
-	pub.getDestroyed = function(val){
-		switch(val){
-			case 0: return destroyed0; break;
-			default: return destroyed0;
-		}
-	};
-	
-	pub.getMovement = function(val) {
-		switch(val){
-			case 0: return movement0; break;
-			default: return movement0;
-		}
-	};
-	
-	pub.getImpact = function(val) {
-		switch(val){
-			case 0: return impact0; break;
-			default: return impact0;
-		}
-	};
-	
-	pub.getDamage = function(val) {
-		switch(val){
-			case 0: return damage0; break;
-			default: return damage0;
-		}
-	};
-	
-	return pub;
 };
 
 function pccontrols(){

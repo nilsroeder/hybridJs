@@ -311,32 +311,55 @@ function hybridLoader() {
 					if( position.length > 1 ) {
 						event.setPosition( position[0], position[1]);
 					}
+					// impact, damage, substance, channel
 					if( mode.length > 1 ) {
-						// impact, damage, substance, channel
 						event.setMode( mode[0], mode[1], mode[2], mode[3] );
+					}
+					else{
+						event.setMode(0, 0, 0, 0);
 					}
 					if( created !== "" ){
 						event.setCreated(created);
 					}
+					else{
+						event.setCreated(0);
+					}
 					if( destroyed !== "" ){
 						event.setDestroyed(destroyed);
+					}
+					else{
+						event.setDestroyed(0);
 					}
 					if( movement !== "" ){
 						event.setMovement(movement);
 					}
+					else{
+						event.setMovement(0);
+					}
 					if( impact !== "" ){
 						event.setImpact(impact);
+					}
+					else{
 					}
 					if( damage !== "" ){
 						event.setDamage(damage);
 					}
+					else{
+						event.setDamage(0);
+					}
+					// energy, lifes
 					if( vitality.length > 1 ) {
-						// energy, lifes
 						event.setVitality( vitality[0], vitality[1] );
 					}
+					else {
+						event.setVitality(1, 1);
+					}
+					// xvel, yvel
 					if( velocity.length > 1 ) {
-						// xvel, yvel
 						event.setVelocity( velocity[0], velocity[1] );
+					}
+					else{
+						event.setVelocity(0, 0);
 					}
 				
 					trigger.addEvent(event);

@@ -3,7 +3,7 @@
 
 	<game>
 	  <displaySpeed>1</displaySpeed>
-	  <gameSpeed>5</gameSpeed>
+	  <gameSpeed>25</gameSpeed>
 	  <border>screen</border>
 	  <collision>pixel</collision>
 	  <doubleBuffering>off</doubleBuffering>
@@ -73,12 +73,8 @@
 	<trigger type="start" lifetime="1">
 	  <event type="ship" prototype="playerBig" name="player">
         <mode>1 1 1 1</mode>
-    	<created>0</created>
-    	<destroyed>0</destroyed>
-    	<movement>0</movement>
-    	<impact>0</impact>
-    	<damage>0</damage>
-        <vitality>1 1</vitality>
+    	<created>1</created>
+    	<movement>1</movement>
         <velocity>2 1</velocity>
         <sprite><position>0 120</position></sprite>
       </event>

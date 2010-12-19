@@ -680,11 +680,21 @@ function hybridSpritePrototype() {
 			// assign user defined gameplay functions to sprite
 			var gameplay = hybridSpriteGameplay(sprite);
 			if( gameplay !== null ){
-				sprite.move      = gameplay.getMovement( event.getMovement() );
-				sprite.impact    = gameplay.getImpact( event.getImpact() );
-				sprite.damage    = gameplay.getDamage( event.getDamage() );
-				sprite.created   = gameplay.getCreated( event.getCreated() );
-				sprite.destroyed = gameplay.getDestroyed( event.getDestroyed() );
+				if( event.getMovement() > 0 ){
+					sprite.move      = gameplay.getMovement( event.getMovement() );
+				}
+				if( event.getImpact() > 0 ){
+					sprite.impact    = gameplay.getImpact( event.getImpact() );
+				}
+				if( event.getDamage() > 0 ){
+					sprite.damage    = gameplay.getDamage( event.getDamage() );
+				}
+				if( event.getCreated() > 0 ){
+					sprite.created   = gameplay.getCreated( event.getCreated() );
+				}
+				if( event.getDestroyed() > 0 ){
+					sprite.destroyed = gameplay.getDestroyed( event.getDestroyed() );
+				}
 			}
 			// sprite creation finalized
 			sprite.created();

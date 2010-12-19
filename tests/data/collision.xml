@@ -3,7 +3,7 @@
 
 	<game>
 	  <displaySpeed>1</displaySpeed>
-	  <gameSpeed>25</gameSpeed>
+	  <gameSpeed>12</gameSpeed>
 	  <border>screen</border>
 	  <collision>pixel</collision>
 	  <doubleBuffering>off</doubleBuffering>
@@ -32,7 +32,7 @@
       </animation>
     </prototype>
     
-     <prototype id="bird">
+    <prototype id="bird">
       <image>data/darkbird.png</image>
       <animation>
         <frames>8</frames>
@@ -41,58 +41,38 @@
       </animation>
     </prototype>
     
-     <prototype id="hborder">
+    <prototype id="hborder">
       <image>data/hborder.png</image>
     </prototype>
     
-     <prototype id="vborder">
+    <prototype id="vborder">
       <image>data/vborder.png</image>
     </prototype>
 	
 	<trigger type="start" lifetime="1">
 	  <event type="player" prototype="player" name="player">
         <mode>1 1 1 1</mode>
-    	<created>0</created>
-    	<destroyed>0</destroyed>
-    	<movement>0</movement>
-    	<impact>0</impact>
-    	<damage>0</damage>
-        <vitality>1 1</vitality>
+        <created>1</created>
+        <movement>1</movement>
+        <damage>1</damage>
         <velocity>1 0</velocity>
         <sprite><position>30 400</position></sprite>
       </event>
       <event type="border" prototype="hborder" name="border">
         <mode>1 1 1 3</mode>
-    	<created>0</created>
-    	<destroyed>0</destroyed>
-    	<movement>0</movement>
-    	<impact>0</impact>
-    	<damage>0</damage>
-        <vitality>1 1</vitality>
-        <velocity>0 0</velocity>
         <sprite><position>10 10</position></sprite>
         <sprite><position>10 700</position></sprite>
       </event>
       <event type="border" prototype="vborder" name="border">
         <mode>1 1 1 3</mode>
-    	<created>0</created>
-    	<destroyed>0</destroyed>
-    	<movement>0</movement>
-    	<impact>0</impact>
-    	<damage>0</damage>
-        <vitality>1 1</vitality>
-        <velocity>0 0</velocity>
         <sprite><position>10 10</position></sprite>
         <sprite><position>880 10</position></sprite>
       </event>
-       <event type="ship" prototype="bird" name="sprite">
+       <event type="bird" prototype="bird" name="sprite">
         <mode>1 1 1 2</mode>
-    	<created>0</created>
-    	<destroyed>0</destroyed>
-    	<movement>0</movement>
-    	<impact>0</impact>
-    	<damage>0</damage>
-        <vitality>1 1</vitality>
+        <created>1</created>
+        <movement>1</movement>
+        <damage>1</damage>
         <velocity>-1 0</velocity>
         <sprite><position>800 400</position></sprite>
       </event>
@@ -102,12 +82,9 @@
       <box>400 300 400 200</box>
       <event type="ship" prototype="bird" name="sprite">
         <mode>1 1 1 2</mode>
-    	<created>0</created>
-    	<destroyed>0</destroyed>
-    	<movement>0</movement>
-    	<impact>0</impact>
-    	<damage>0</damage>
-        <vitality>1 1</vitality>
+        <created>1</created>
+        <movement>1</movement>
+        <damage>1</damage>
         <velocity>-1 0</velocity>
         <sprite><position>800 400</position></sprite>
       </event>
@@ -117,12 +94,9 @@
       <box>300 200 200 400</box>
       <event type="ship" prototype="bird" name="sprite">
         <mode>1 1 1 2</mode>
-    	<created>0</created>
-    	<destroyed>0</destroyed>
-    	<movement>0</movement>
-    	<impact>0</impact>
-    	<damage>0</damage>
-        <vitality>1 1</vitality>
+    	<created>1</created>
+        <movement>1</movement>
+        <damage>1</damage>
         <velocity>-1 1</velocity>
         <sprite><position>800 300</position></sprite>
       </event>

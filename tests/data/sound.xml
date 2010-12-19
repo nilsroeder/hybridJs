@@ -44,44 +44,10 @@
    <trigger type="start" lifetime="1">
 	  <event type="player" prototype="player" name="player">
         <mode>1 1 1 1</mode>
-    	<created>0</created>
-    	<destroyed>0</destroyed>
-    	<movement>0</movement>
-    	<impact>0</impact>
-    	<damage>0</damage>
-        <vitality>1 1</vitality>
+    	<created>1</created>
+    	<movement>1</movement>
         <velocity>1 0</velocity>
         <sprite><position>0 400</position></sprite>
-      </event>
-    </trigger>
-    
-    <trigger type="coordinate" lifetime="1">
-      <box>400 300 400 200</box>
-      <event type="ship" prototype="player" name="sprite">
-        <mode>1 1 1 2</mode>
-    	<created>0</created>
-    	<destroyed>0</destroyed>
-    	<movement>0</movement>
-    	<impact>0</impact>
-    	<damage>0</damage>
-        <vitality>1 1</vitality>
-        <velocity>-1 0</velocity>
-        <sprite><position>800 400</position></sprite>
-      </event>
-    </trigger>
-    
-    <trigger type="coordinate" lifetime="1">
-      <box>500 200 200 400</box>
-      <event type="ship" prototype="player" name="sprite">
-        <mode>1 1 1 2</mode>
-    	<created>0</created>
-    	<destroyed>0</destroyed>
-    	<movement>0</movement>
-    	<impact>0</impact>
-    	<damage>0</damage>
-        <vitality>1 1</vitality>
-        <velocity>-1 1</velocity>
-        <sprite><position>800 300</position></sprite>
       </event>
     </trigger>
 </level>
